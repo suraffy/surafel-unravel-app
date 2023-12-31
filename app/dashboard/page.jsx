@@ -12,7 +12,7 @@ const Dashboard = () => {
       </div>
 
       <div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-5">
-        <Box title={"catagory"} />
+        <Box title={"category"} />
         <Box title={"tags"} />
         <Box title={"unit"} />
         <Box title={"brand"} />
