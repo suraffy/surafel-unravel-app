@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
@@ -6,7 +7,9 @@ const Navbar = () => {
     <div className="shadow">
       <div className="navbar container bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Unravel</a>
+          <Link href={"/dashboard"} className="btn btn-ghost text-xl">
+            Lively
+          </Link>
         </div>
         <div className="dropdown dropdown-end">
           <div

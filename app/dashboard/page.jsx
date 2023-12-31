@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Box from "./Box";
+import Link from "next/link";
 
 const Dashboard = () => {
   return (
@@ -12,11 +13,25 @@ const Dashboard = () => {
       </div>
 
       <div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-5">
-        <Box title={"category"} />
-        <Box title={"tags"} />
-        <Box title={"unit"} />
-        <Box title={"brand"} />
-        <Box title={"products"} />
+        <Link href={"dashboard/category"}>
+          <Box title={"category"} />
+        </Link>
+
+        <Link href={"dashboard/tags"}>
+          <Box title={"tags"} />
+        </Link>
+
+        <Link href={"dashboard/unit"}>
+          <Box title={"unit"} />
+        </Link>
+
+        <Link href={"dashboard/brand"}>
+          <Box title={"brand"} />
+        </Link>
+
+        <Link href={"dashboard/products"}>
+          <Box title={"products"} />
+        </Link>
       </div>
     </div>
   );
