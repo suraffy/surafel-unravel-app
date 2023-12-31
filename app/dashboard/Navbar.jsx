@@ -3,8 +3,8 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-      <div className="container mx-auto">
+    <div className="shadow">
+      <div className="navbar container bg-base-100">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">Unravel</a>
         </div>
