@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Box from "./Box";
+import Navbar from "../components/organisms/Navbar";
+import Box from "../components/molecules/Box";
 import Link from "next/link";
 
 const Dashboard = () => {

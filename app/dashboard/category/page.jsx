@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../Navbar";
+import Navbar from "@/app/components/organisms/Navbar";
+import TableRow from "@/app/components/molecules/TableRow";
 
 const Category = async () => {
   const apiEndpoint =
@@ -40,26 +41,15 @@ const Category = async () => {
 
             <tbody>
               {categories.map((category) => (
-                <tr key={category.id}>
-                  <td>{category.name.english}</td>
-                  <td>{category.type}</td>
-                  <td>
-                    <span className="badge badge-ghost rounded-md py-3">
-                      {category.status}
-                    </span>
-                  </td>
-                  <td>{category.slug}</td>
-                  <td>
-                    <button className="btn btn-outline btn-warning btn-xs">
-                      Edit
-                    </button>
-                  </td>
-                  <td>
-                    <button className="btn btn-outline btn-error btn-xs">
-                      Delete
-                    </button>
-                  </td>
-                </tr>
+                <TableRow
+                  key={category.id}
+                  items={[
+                    category.name.english,
+                    category.type,
+                    category.status,
+                    category.slug,
+                  ]}
+                />
               ))}
             </tbody>
           </table>
