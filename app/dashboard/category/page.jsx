@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import Navbar from "@/app/components/organisms/Navbar";
 import TableRow from "@/app/components/molecules/TableRow";
+import Button from "@/app/components/atoms/buttons";
 
 const Category = async () => {
   const apiEndpoint =
@@ -24,7 +26,13 @@ const Category = async () => {
       <Navbar />
 
       <main className="container my-6">
-        <h2 className="font-bold text-xl my-2">Categories</h2>
+        <h2 className="font-bold text-xl text-center my-2">Categories</h2>
+
+        <div className="my-6 flex ml-3">
+          <Link href={"/dashboard/category/create"}>
+            <Button label={"New Catagory"} />
+          </Link>
+        </div>
 
         <div className="overflow-x-auto">
           <table className="table table-bordered">
