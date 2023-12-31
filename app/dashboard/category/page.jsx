@@ -2,20 +2,21 @@ import React from "react";
 import Navbar from "../Navbar";
 
 const Category = async () => {
-  const response = await fetch(
-    "https://lively.unravelplc.com/public/api/content-creator/categories/",
-    {
-      method: "GET",
-      headers: {
-        Authorization:
-          "Bearer 641|1Pl2Vz03IVjeBZc2I6Pdldlreu3w3eBBJpl1yE9L5612b52d",
-      },
-    }
-  );
+  const apiEndpoint =
+    "https://lively.unravelplc.com/public/api/content-creator/categories/";
+  const accessToken = "641|1Pl2Vz03IVjeBZc2I6Pdldlreu3w3eBBJpl1yE9L5612b52d";
+
+  const response = await fetch(apiEndpoint, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  });
 
   const {
     data: { data: categories },
-  } = await response.json();
+  } = await (response.ok ? response.json() : { data: { data: [] } });
 
   return (
     <div>
