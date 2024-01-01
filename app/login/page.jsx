@@ -1,11 +1,13 @@
 import React from "react";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
+
 import LoginForm from "@/app/components/organisms/LoginForm";
 
 const Login = async () => {
   const apiEndpoint = "https://lively.unravelplc.com/api/login";
 
-  const handleSubmit = async (formData) => {
+  const handleSubmit = async (formData, res) => {
     "use server";
     const phone = formData.get("email");
     const password = formData.get("password");
@@ -22,6 +24,14 @@ const Login = async () => {
       const {
         data: { token },
       } = await response.json();
+
+      cookies().set({
+        name: "authToken",
+        value: token,
+        httpOnly: true,
+        path: "/",
+      });
+
       redirect("/dashboard");
     }
   };

@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { cookies } from "next/headers";
+
 import Navbar from "@/app/components/organisms/Navbar";
 import TableRow from "@/app/components/molecules/TableRow";
 import Button from "@/app/components/atoms/buttons";
@@ -7,7 +9,10 @@ import Button from "@/app/components/atoms/buttons";
 const Category = async () => {
   const apiEndpoint =
     "https://lively.unravelplc.com/public/api/content-creator/categories/";
-  const accessToken = "641|1Pl2Vz03IVjeBZc2I6Pdldlreu3w3eBBJpl1yE9L5612b52d";
+
+  const cookieStore = cookies();
+  const encodedToken = cookieStore.get("authToken");
+  const accessToken = decodeURIComponent(encodedToken.value);
 
   const response = await fetch(apiEndpoint, {
     method: "GET",
