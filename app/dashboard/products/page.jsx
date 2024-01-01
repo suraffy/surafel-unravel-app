@@ -31,7 +31,7 @@ const Products = async () => {
       <Navbar />
 
       <main className="container my-6">
-        <h2 className="font-bold text-xl text-center my-2">Products</h2>
+        <h2 className="font-bold text-xl text-center my-2">Lively Products</h2>
 
         <div className="my-6 flex ml-3">
           <Link href={"/dashboard/category/create"}>

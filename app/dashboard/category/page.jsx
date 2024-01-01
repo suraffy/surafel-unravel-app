@@ -31,7 +31,9 @@ const Category = async () => {
       <Navbar />
 
       <main className="container my-6">
-        <h2 className="font-bold text-xl text-center my-2">Categories</h2>
+        <h2 className="font-bold text-xl text-center my-2">
+          Lively Categories
+        </h2>
 
         <div className="my-6 flex ml-3">
           <Link href={"/dashboard/category/create"}>
