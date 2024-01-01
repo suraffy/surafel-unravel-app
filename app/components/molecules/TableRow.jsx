@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../atoms/buttons";
+import Button from "../atoms/Button";
 
 const TableRow = (props) => {
   const { items } = props;

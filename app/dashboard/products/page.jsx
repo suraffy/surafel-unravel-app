@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 import Navbar from "@/app/components/organisms/Navbar";
 import TableRow from "@/app/components/molecules/TableRow";
-import Button from "@/app/components/atoms/buttons";
+import Button from "@/app/components/atoms/Button";
 
 const Products = async () => {
   const apiEndpoint =

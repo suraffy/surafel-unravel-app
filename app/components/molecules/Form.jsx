@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../atoms/Buttons";
+import Button from "../atoms/Button";
 import InputField from "../atoms/InputField";
 
 const Form = (props) => {
