@@ -6,8 +6,8 @@ const TableRow = (props) => {
 
   return (
     <tr>
-      {items.map((item) => (
-        <td key={item}>{item}</td>
+      {items.map((item, index) => (
+        <td key={index} dangerouslySetInnerHTML={{ __html: item }}></td>
       ))}
       <td>
         <Button label={"Edit"} action={"edit"} />

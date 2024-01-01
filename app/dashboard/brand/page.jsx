@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { cookies } from "next/headers";
+
 import Navbar from "@/app/components/organisms/Navbar";
 import TableRow from "@/app/components/molecules/TableRow";
 import Button from "@/app/components/atoms/buttons";
@@ -7,7 +9,10 @@ import Button from "@/app/components/atoms/buttons";
 const Brand = async () => {
   const apiEndpoint =
     "https://lively.unravelplc.com/public/api/content-creator/all-brands";
-  const accessToken = "677|a4NQZxf9AvpTFZvTPKi0zbSbOqZ6EpQJ2A3qyCzW802674ff";
+
+  const cookieStore = cookies();
+  const encodedToken = cookieStore.get("authToken");
+  const accessToken = decodeURIComponent(encodedToken.value);
 
   const response = await fetch(apiEndpoint, {
     method: "GET",
@@ -24,7 +29,7 @@ const Brand = async () => {
       <Navbar />
 
       <main className="container my-6">
-        <h2 className="font-bold text-xl text-center my-2">Categories</h2>
+        <h2 className="font-bold text-xl text-center my-2">Brands</h2>
 
         <div className="my-6 flex ml-3">
           <Link href={"/dashboard/category/create"}>
