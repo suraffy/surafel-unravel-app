@@ -6,6 +6,15 @@ import { cookies } from "next/headers";
 import LoginForm from "@/app/components/organisms/LoginForm";
 
 const Login = async () => {
+  const cookieStore = cookies();
+  const encodedToken = cookieStore.get("authToken");
+
+  if (encodedToken) {
+    if (encodedToken.value) {
+      redirect("/dashboard");
+    }
+  }
+
   const apiEndpoint = "https://lively.unravelplc.com/api/login";
 
   const handleSubmit = async (formData) => {
