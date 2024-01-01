@@ -1,8 +1,23 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 const Navbar = () => {
+  const handleLogout = async () => {
+    "use server";
+
+    cookies().set({
+      name: "authToken",
+      value: "",
+      httpOnly: true,
+      path: "/",
+    });
+
+    redirect("/login");
+  };
+
   return (
     <div className="shadow">
       <div className="navbar container bg-base-100">
@@ -20,8 +35,8 @@ const Navbar = () => {
             <div className="w-10 rounded-full">
               <Image
                 alt="Tailwind CSS Navbar component"
-                src="/surafel.jpg"
-                width={60}
+                src="https://i.imgur.com/oq2aLRm.png"
+                width={40}
                 height={60}
               />
             </div>
@@ -30,9 +45,15 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li className="text-center font-semibold">Surafel Araya</li>
+            <li className="text-center font-semibold">Admin</li>
             <li className="mt-2">
-              <button className="text-center">Logout</button>
+              <form action={handleLogout}>
+                <input
+                  type="submit"
+                  value="Logout"
+                  className="pr-32 cursor-pointer"
+                />
+              </form>
             </li>
           </ul>
         </div>

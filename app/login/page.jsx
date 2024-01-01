@@ -7,7 +7,7 @@ import LoginForm from "@/app/components/organisms/LoginForm";
 const Login = async () => {
   const apiEndpoint = "https://lively.unravelplc.com/api/login";
 
-  const handleSubmit = async (formData, res) => {
+  const handleSubmit = async (formData) => {
     "use server";
     const phone = formData.get("email");
     const password = formData.get("password");
