@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Navbar from "@/app/components/organisms/Navbar";
 import Form from "@/app/components/molecules/Form";
@@ -16,10 +14,10 @@ const Create = () => {
 
         <Form
           fields={[
-            { label: "name", type: "text" },
-            { label: "type", type: "text" },
-            { label: "slug", type: "text" },
-            { label: "image", type: "file" },
+            { label: "Name", type: "text" },
+            { label: "Type", type: "text" },
+            { label: "Slug", type: "text" },
+            { label: "Image", type: "file" },
           ]}
         />
       </div>
