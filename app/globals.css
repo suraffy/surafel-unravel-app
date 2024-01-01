@@ -16,6 +16,10 @@
   }
 }
 
+* {
+  outline-color: rgb(59, 167, 255);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
 }

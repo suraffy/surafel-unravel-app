@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="navbar container bg-base-100">
         <div className="flex-1">
           <Link href={"/dashboard"} className="btn btn-ghost text-xl">
-            Lively
+            <img src="/unravel logo.svg" width={180} />
           </Link>
         </div>
         <div className="dropdown dropdown-end">
