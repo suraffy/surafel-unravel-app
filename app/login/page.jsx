@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
@@ -40,7 +41,7 @@ const Login = async () => {
     <div>
       <section className="bg-gray-50">
         <div className="max-w-96 pt-8 mx-auto">
-          <img src="/unravel logo.svg" alt="" />
+          <Image src="/unravel logo.svg" alt="logo" width={400} height={100} />
         </div>
 
         <div className="flex flex-col items-center mt-8 px-6 py-4 mx-auto md:h-screen lg:py-0">

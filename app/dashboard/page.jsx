@@ -4,7 +4,6 @@ import Box from "../components/molecules/Box";
 import Link from "next/link";
 
 const Dashboard = () => {
-  console.log("Component is rendering");
   return (
     <div>
       <Navbar />

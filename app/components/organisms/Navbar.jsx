@@ -23,7 +23,12 @@ const Navbar = () => {
       <div className="navbar container bg-base-100">
         <div className="flex-1">
           <Link href={"/dashboard"} className="btn btn-ghost text-xl">
-            <img src="/unravel logo.svg" width={180} />
+            <Image
+              src={"/unravel logo.svg"}
+              width={180}
+              height={20}
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="dropdown dropdown-end">
@@ -34,7 +39,7 @@ const Navbar = () => {
           >
             <div className="w-10 rounded-full">
               <Image
-                alt="Tailwind CSS Navbar component"
+                alt="profile"
                 src="https://i.imgur.com/oq2aLRm.png"
                 width={40}
                 height={60}
@@ -48,11 +53,7 @@ const Navbar = () => {
             <li className="text-center font-semibold">Admin</li>
             <li className="mt-2">
               <form action={handleLogout}>
-                <input
-                  type="submit"
-                  value="Logout"
-                  className="pr-32 cursor-pointer"
-                />
+                <button className="pr-32 cursor-pointer">Logout</button>
               </form>
             </li>
           </ul>
